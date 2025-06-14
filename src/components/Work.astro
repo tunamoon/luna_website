@@ -1,0 +1,353 @@
+---
+import background from '../assets/beige_work.jpg';
+import mvlab from '../assets/work/work_mvlab.png';
+import headta from '../assets/work/work_headta.png';
+import swe from '../assets/work/work_swe.png';
+import pm from '../assets/work/work_pm.png';
+import mktg from '../assets/work/work_mktg.png';
+const { href, label } = Astro.props;
+
+
+
+
+import Navbar from './Navbar.astro'
+---
+<Navbar class="site-navbar" />
+
+<div id="container">
+	<img id="background" src={background.src} alt="" fetchpriority="high" class="opacity-40"/>
+	<main>
+		<section id="hero" class="relative flex flex-wrap justify-center pt-56 max-w-4xl">
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener"
+				class="relative group inline-block"
+				aria-label={label}
+			>
+				<div class="flex flex-col items-center pr-10">
+					<img src={mvlab.src} alt="Smartglasses" class="h-48 object-cover mt-10 rounded-3xl opacity-100 transition-opacity duration-200 group-hover:opacity-50"/>
+					<h3 class="">Research Assistant</h3>
+					<h3 class="">Machine Vision Lab</h3>
+					<span
+						class="
+						absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-16 border-black border-2
+						hidden group-hover:block
+						px-2 py-2 text-gray-800 text-s rounded-3xl
+						whitespace-nowrap
+						z-10 bg-[#E8DED1] shadow-md
+						flex-col
+						"
+					>
+						Skills: Eyetracking, Aria Glasses, Python, Config Files, HCI<br/>
+						Scaled participant engagement0 to 40, established eye gaze <br/>
+						data collection. Automated VRS data extraction through Python <br/>
+						scripts, reducing processing time by 30%. Increased prediction <br/>
+						by refining config files, benefiting applications in HCI research.
+						
+					</span>
+				</div>
+			</a>
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener"
+				class="relative group inline-block"
+				aria-label={label}
+			>
+				<div class="flex flex-col items-center -mt-32">
+					<img src={swe.src} alt="Photo of me" class="h-64 object-cover mt-10 rounded-3xl opacity-100 transition-opacity duration-200 group-hover:opacity-50"/>
+					<h3 class="mr-6">Software Engineer Intern</h3>
+					<h3 class="mr-28">Capital One</h3>
+					<span
+						class="
+						absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-20 border-black border-2
+						hidden group-hover:block
+						px-2 py-2 text-gray-800 text-s rounded-3xl
+						whitespace-nowrap
+						z-10 bg-[#E8DED1] shadow-md
+						flex-col
+						"
+					>
+						Skills: Node.js, AWS Lambda, Javascript, Google API, Backend<br/>
+						Developed Node.js backend on AWS Lmabda and API Gateway to <br/>
+						surface Google Admin Console functionality directly in company <br/>
+						web console. Integrated Goodgle Admin SDK, Calendar API to <br/>
+						streamline user and conference management, gmail, super admin <br/>
+						responsibilities.
+						
+					</span>
+				</div>
+
+			</a>
+			
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener"
+				class="relative group inline-block"
+				aria-label={label}
+			>
+				<div class="flex flex-col items-center">
+
+					<img src={headta.src} alt="Photo of me" class="h-64 object-cover mt-10 rounded-3xl opacity-100 transition-opacity duration-200 group-hover:opacity-50"/>
+					<h3 class="mr-10">Head Teaching Assistant</h3>
+					<h3 class="ml-10">University of Pennsylvania, CIS1600</h3>
+					<span
+						class="
+						absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-52 border-black border-2
+						hidden group-hover:block
+						px-2 py-2 text-gray-800 text-s rounded-3xl
+						whitespace-nowrap
+						z-10 bg-[#E8DED1] shadow-md
+						flex-col
+						"
+					>
+						Skills: Leadership, Mentorship, Graph Theory, Discrete Probability<br/>
+						Led a team of 30+ TA's and conducted weekly recitations for 100+ <br/>
+						students. Developed 50+ grading rubrics ensuring consistencyy <br/>
+						and fariness in homeworks, assessments. <br/>
+						
+					</span>
+				</div>
+			</a>
+
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener"
+				class="relative group inline-block"
+				aria-label={label}
+			>
+
+				<div class="flex flex-col items-center">
+					<img src={pm.src} alt="Photo of me" class="h-48 object-cover mt-10 rounded-3xl opacity-100 transition-opacity duration-200 group-hover:opacity-50"/>
+					<h3 class="mr-10">Product Manager</h3>
+					<h3 class="ml-10">Dev4Good</h3>
+					<span
+						class="
+							absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-16 border-black border-2
+							hidden group-hover:block
+							px-2 py-2 text-gray-800 text-s rounded-3xl
+							whitespace-nowrap
+							z-10 bg-[#E8DED1] shadow-md
+							flex-col
+							"
+					>
+						Skills: Full Stack, React Native, Firebase, HTML, CSS, Communication<br/>
+						Led a team of 10 developers to create a custom API server and<br/>
+						student web registration page for AmericaSCORES. Developed a web<br/>
+						framework for Centro Community Partners through Firebase, React Native.<br/>
+							
+					</span>
+				</div>
+			</a>
+
+			<a
+				href={href}
+				target="_blank"
+				rel="noopener"
+				class="relative group inline-block"
+				aria-label={label}
+			>
+
+				<div class="flex flex-col items-center mb-10">
+					<img src={mktg.src} alt="Photo of me" class="h-64 object-cover mt-12 rounded-3xl opacity-100 transition-opacity duration-200 group-hover:opacity-50"/>
+					<h3 class="mr-10">Project Lead</h3>
+					<h3 class="ml-10">Penn SPARK</h3>
+					<span
+						class="
+							absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-20 border-black border-2
+							hidden group-hover:block
+							px-2 py-2 text-gray-800 text-s rounded-3xl
+							whitespace-nowrap
+							z-10 bg-[#E8DED1] shadow-md
+							flex-col
+							"
+					>
+						Skills: Full Stack, React Native, Firebase, Testflight<br/>
+						Led a team of 8 developers and designers to create a mobile app<br/>
+						to streamline the roommate experience and gameifying chore doing.<br/>
+						Deployed on testflight with 50+ users.<br/>
+							
+					</span>
+				</div>
+			</a>
+
+		</section>
+	</main>
+</div>
+
+<style>
+	#background {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		/* filter: blur(10px); */
+	}
+
+	:global(.site-navbar) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 50;
+		font-family: 'molengo';
+		padding-left: 100px;
+		padding-right: 100px;
+		/* filter: blur(10px); */
+	}
+
+	#container {
+		font-family: 'molengo';
+		height: 100vh;
+		position: relative;
+		overflow-y: auto;
+	}
+
+	main {
+		height: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	h1 {
+		font-size: 22px;
+		margin-top: 0.25em;
+	}
+
+	#links {
+		display: flex;
+		gap: 16px;
+	}
+
+	#links a {
+		display: flex;
+		align-items: center;
+		padding: 10px 12px;
+		color: #111827;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	#links a:hover {
+		color: rgb(78, 80, 86);
+	}
+
+	#links a svg {
+		height: 1em;
+		margin-left: 8px;
+	}
+
+	#links a.button {
+		color: white;
+		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+		box-shadow:
+			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+		border-radius: 10px;
+	}
+
+	#links a.button:hover {
+		color: rgb(230, 230, 230);
+		box-shadow: none;
+	}
+
+	pre {
+		font-family:
+			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
+			monospace;
+		font-weight: normal;
+		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin: 0;
+	}
+
+	h2 {
+		margin: 0 0 1em;
+		font-weight: normal;
+		color: #111827;
+		font-size: 20px;
+	}
+
+	p {
+		color: #4b5563;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.006em;
+		margin: 0;
+	}
+
+	code {
+		display: inline-block;
+		background:
+			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
+			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
+		border-radius: 8px;
+		border: 1px solid transparent;
+		padding: 6px 8px;
+	}
+
+	.box {
+		padding: 16px;
+		background: rgba(255, 255, 255, 1);
+		border-radius: 16px;
+		border: 1px solid white;
+	}
+
+	#news {
+		position: absolute;
+		bottom: 16px;
+		right: 16px;
+		max-width: 300px;
+		text-decoration: none;
+		transition: background 0.2s;
+		backdrop-filter: blur(50px);
+	}
+
+	#news:hover {
+		background: rgba(255, 255, 255, 0.55);
+	}
+
+	@media screen and (max-height: 368px) {
+		#news {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		#container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		#hero {
+			display: block;
+			padding-top: 10%;
+		}
+
+		#links {
+			flex-wrap: wrap;
+		}
+
+		#links a.button {
+			padding: 14px 18px;
+		}
+
+		#news {
+			right: 16px;
+			left: 16px;
+			bottom: 2.5rem;
+			max-width: 100%;
+		}
+
+		h1 {
+			line-height: 1.5;
+		}
+	}
+</style>

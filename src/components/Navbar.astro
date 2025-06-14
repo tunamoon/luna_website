@@ -1,0 +1,88 @@
+---
+/* Navbar.astro */
+const { pathname } = Astro.url;
+const normalize = (p) => p.replace(/\/+$/, '') || '/';
+
+const links = [
+  { name: 'Home',     href: '/' },
+  { name: 'Work',     href: '/work_page' },
+  { name: 'Projects', href: '/project_page' },
+  { name: 'Resume',   href: '/resume_page' },
+];
+
+// imported social stuff
+import LinkedinIcon from '../assets/linkedin.svg';
+import EmailIcon    from '../assets/email.svg';
+import GitHubIcon   from '../assets/github.svg';
+
+const socials = [
+  { href: 'https://www.linkedin.com/in/luna-chen-9246501b0/', icon: LinkedinIcon,    label: 'LinkedIn' },
+  { href: 'mailto:tunamoon@seas.upenn.com',                 icon: EmailIcon,       label: 'Email'    },
+  { href: 'https://github.com/tunamoon',       icon: GitHubIcon,      label: 'GitHub'   },
+];
+
+---
+
+
+<nav class="site-navbar">
+  <div id="title">
+      <h1 class="text-3xl font-molengo">Luna Chen</h1>
+    </div>
+  <section id="topbar" class="flex flex-col">
+
+    <!-- social icons -->
+    <div id="socials" class="flex justify-end items-center space-x-4 -translate-y-8">
+      {socials.map(({ href, icon, label }) => (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener"
+          class="hover:opacity-80 transition-opacity"
+          aria-label={label}
+        >
+          <img src={icon.src} alt={label} class="h-6 w-6" />
+        </a>
+      ))}
+    </div>
+
+    <div id="page" class="flex items-center space-x-8 justify-center">
+      {links.map(({ name, href }) => (
+        <a
+          href={href}
+          class={`
+            relative pb-1 text-lg font-medium transition-all
+            after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-black
+            ${
+              normalize(pathname) === normalize(href)
+                ? 'after:scale-x-100'              /* ACTIVE  → underline shown */
+                : 'after:scale-x-0 hover:after:scale-x-100' /* INACTIVE → underline on hover */
+            }
+          `}
+        >
+          {name}
+        </a>
+      ))}
+    </div>
+
+
+  </section>
+
+  <style>
+    :host {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: "Molengo", sans-serif;
+    }
+
+    #title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 30px;
+    }
+  </style>
+</nav>
