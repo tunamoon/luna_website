@@ -2,12 +2,9 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from '@astrojs/react';
 
-const REPO = "luna_website";
 export default defineConfig({
   integrations: [tailwind(), react()],
-  base: `/${REPO}/`,
-  outDir: 'docs',
-  // build: {
-  //   assets: "luna_website/_astro",  
-  // },
+  site: "https://tunamoon.github.io",
+  base: "/luna_website/",
+  outDir: "docs",
 });
