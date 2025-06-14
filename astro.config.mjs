@@ -7,4 +7,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   base: `/${REPO}/`,
   outDir: 'docs',
+  build: {
+    assets: "luna_website/_astro",  
+  },
 });
