@@ -3,11 +3,13 @@
 const { pathname } = Astro.url;
 const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
 
+const BASE = "/luna_website/";
+
 const links = [
-  { name: 'Home',     href: '/' },
-  { name: 'Work',     href: '/work_page' },
-  { name: 'Projects', href: '/project_page' },
-  { name: 'Resume',   href: '/resume_page' },
+  { name: 'Home',     href: BASE },
+  { name: 'Work',     href: BASE + 'work_page/' },
+  { name: 'Projects', href: BASE + 'project_page/' },
+  { name: 'Resume',   href: BASE + 'resume_page/' },
 ];
 
 // imported social stuff
@@ -46,22 +48,22 @@ const socials = [
     </div>
 
     <div id="page" class="flex items-center space-x-8 justify-center">
-      {links.map(({ name, href }) => (
-        <a
-          href={href}
-          class={`
-            relative pb-1 text-lg font-medium transition-all
-            after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-black
-            ${
-              normalize(pathname) === normalize(href)
-                ? 'after:scale-x-100'              /* ACTIVE  → underline shown */
-                : 'after:scale-x-0 hover:after:scale-x-100' /* INACTIVE → underline on hover */
-            }
-          `}
-        >
-          {name}
-        </a>
-      ))}
+      {links.map(({ name, href }) => {
+        const isActive  = normalize(pathname) === normalize(href);
+
+        const linkClass = [
+          'relative pb-1 text-lg font-medium transition-all',
+          'after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-black',
+          isActive ? 'after:scale-x-100'
+                  : 'after:scale-x-0 hover:after:scale-x-100',
+        ].join(' ');
+
+        return (
+          <a href={href} class={linkClass}>
+            {name}
+          </a>
+        );
+      })}
     </div>
 
 
