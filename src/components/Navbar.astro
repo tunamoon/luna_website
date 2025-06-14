@@ -1,7 +1,7 @@
 ---
 /* Navbar.astro */
 const { pathname } = Astro.url;
-const normalize = (p) => p.replace(/\/+$/, '') || '/';
+const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
 
 const links = [
   { name: 'Home',     href: '/' },
